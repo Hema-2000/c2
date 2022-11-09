@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main()
+{
+    char str[20];
+    char temp;
+    int len;
+    printf("enter the str: ");
+    scanf("%s",str);
+    for(len=0;str[le
+    n]!='\0';len++);
+    temp=str[0];
+    str[0]=str[len-1];
+    str[len-1]=temp;
+    printf("after swapping first and last elements : %s",str);
+    return 0;
+}
