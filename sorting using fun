@@ -1,0 +1,55 @@
+#include<stdio.h>
+#include<string.h>
+enum sorting{as,ds};
+char sort_dec(char[]);
+char sort_asc(char[]);
+int main()
+{
+  char str[20]="hemalatha";
+  int choice;
+  printf("enter the choice:");
+  scanf("%d",&choice);
+  switch(choice)
+  {
+      case as:
+        sort_asc(str);
+        break;
+      case ds:
+        sort_dec(str);
+        break;
+      
+      default:
+        printf("enter the valid choice");
+  }
+  return 0;
+}
+char sort_dec(char str[])
+{
+  int len,i,j;
+  char temp;
+  len=strlen(str);
+  for(i=0;i<len;i++)
+  for(j=0;j<len;j++)
+  if(str[i]>str[j])
+  {
+      temp=str[i];
+      str[i]=str[j];
+      str[j]=temp;
+  }
+  printf("%s\n",str);
+}
+char sort_asc(char str[])
+{
+  int len,i,j;
+  char temp;
+  len=strlen(str);
+  for(i=0;i<len;i++)
+  for(j=0;j<len;j++)
+  if(str[i]<str[j])
+  {
+      temp=str[i];
+      str[i]=str[j];
+      str[j]=temp;
+  }
+  printf("%s\n",str);
+}
