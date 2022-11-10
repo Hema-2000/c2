@@ -1,0 +1,34 @@
+#include<stdio.h>
+#include<stdlib.h>
+int avg(int mar[],int size)
+{
+    int i,sum=0,average=0;
+    for(i=0;i<size;i++){
+    sum=sum+mar[i];
+    }
+    average=sum/size;
+    printf(" in fun size of an array is %ld\n ", sizeof(mar));
+    return average;
+}
+int main()
+{
+   int  marks[5],average;
+    int size=sizeof(marks)/sizeof(marks[0]);
+    printf("enter the elements:");
+    for(int i=0;i<size;i++)
+    {
+        scanf("%d",&marks[i]);
+    }
+     for(int i=0;i<size;i++)
+    {
+        printf("%d",marks[i]);
+    }
+  
+   printf("in main size of an array is %ld\n",(long int) sizeof(marks));
+   average=avg(marks,size);
+    printf("avg of marks: %d\n",average);
+    
+     
+    return 0;
+}
+
