@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+  int n=5,n1=7,i;
+  //int arr[10];
+  //printf("enter the n value:");
+  //scanf("%d",&n);
+  int *ptr=(int*)malloc(n*sizeof(int));
+  //ptr=arr;
+  ptr=(int*)realloc(ptr,n1*sizeof(int));
+  printf("enter the elements in an array:");
+  *(ptr+0)=1;
+  *(ptr+1)=1;
+  *(ptr+2)=1;
+  *(ptr+3)=1;
+  *(ptr+4)=1;
+  *(ptr+5)=1;
+  *(ptr+6)=1;
+  printf("the array elements are:");
+  for(i=0;i<n;i++)
+  {
+      printf(" %d ",*(ptr+i));
+  }
+  return 0;
+}
