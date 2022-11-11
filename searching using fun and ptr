@@ -1,0 +1,32 @@
+#include<stdio.h>
+int swapping(int *ptr,int n)
+{
+   int num,i,flag=0;
+   printf("enter the element to search:");
+   scanf("%d",&num);
+   for(i=0;i<n;i++)
+   {
+       if(ptr[i]==num)
+       {
+           flag++;
+           break;
+       }
+       
+   }
+   return flag;
+}
+int main()
+{
+    int arr[5],i,fg;
+    int *ptr=arr;
+    printf("enter the elements in an array:");
+    for(i=0;i<5;i++)
+    scanf("%d",&ptr[i]);
+    for(i=0;i<5;i++)
+    printf("%d ",ptr[i]);
+   fg= swapping(ptr,5);
+    printf("\n");
+    (fg>0)?printf("searching element is found & its occurance:%d",fg):printf("searching element is not found");
+   
+    return 0;
+}v
