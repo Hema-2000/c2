@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<stdlib.h>
+//#pragma pack(1)
+struct point
+	{
+	  char name[9];
+	  int id;
+	  float salary;
+	};
+	
+	int main() {
+	  struct point *ptr;
+	  ptr=(struct point *)malloc(sizeof(struct point));
+	   printf("%ld",sizeof(struct point));
+	  printf("Enter employee details:\n");
+    
+    scanf("%s %d %f", (ptr)->name, &(ptr)->id,&(ptr)->salary);
+	/* strcpy(p1.name,"hema");
+	  p1.id=45;
+	  p1.salary=4.5;*/
+  printf("%s %d %f",ptr->name,ptr->id,ptr->salary);
+ 
+	  return 0;
+	}
+	
