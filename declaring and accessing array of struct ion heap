@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include<stdlib.h>
+typedef struct employee
+{
+    char name[10];
+    int rollno;
+    float salary;
+}emp;
+int main()
+{
+   emp *ptr;
+    int i,len=3;
+    ptr=(emp *)calloc(len,sizeof(emp));
+    //for(i=0;i<3;i++)
+    //scanf("%s %d %f",e[i].name,&e[i].rollno,&e[i].salary);
+   strcpy(ptr[0].name,"hema");
+    ptr[0].rollno=42;
+    ptr[0].salary=4.5;
+     strcpy(ptr[1].name,"hema");
+    ptr[1].rollno=42;
+    ptr[1].salary=4.5;
+    strcpy(ptr[2].name,"hema");
+    ptr[2].rollno=42;
+    ptr[2].salary=4.5;
+    
+    len=4;
+    
+     ptr=(emp *)realloc(ptr,sizeof(emp)*len);
+     strcpy(ptr[3].name,"hema");
+    ptr[3].rollno=42;
+    ptr[3].salary=4.5;
+     for(i=0;i<len;i++)
+     {
+    printf("%s %d %f",ptr[i].name,ptr[i].rollno,ptr[i].salary);
+    printf("\n");
+     }
+
+    return 0;
