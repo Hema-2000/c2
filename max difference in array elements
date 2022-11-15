@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int arr[6]={5,9,7,8,10,11};
+    int max=0;
+    int i,j,diff=0;
+    int a,b;
+    for(i=0;i<6;i++)
+    {
+        for(j=i+1;j<6;j++)
+        {
+          
+            if(abs(arr[i]-arr[j])>diff)
+            {
+            diff=abs(arr[i]-arr[j]);
+            a=arr[i];
+            b=arr[j];
+            }
+            
+        }
+    }
+    printf("%d %d ",a,b);
+    printf("%d",diff);
+    
+}
