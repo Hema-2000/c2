@@ -1,0 +1,29 @@
+#include <stdio.h>
+typedef struct employee
+{
+    char name[10];
+    int rollno;
+    float salary;
+}emp;
+int main()
+{
+    emp e[3];
+    int i;
+    for(i=0;i<3;i++)
+    scanf("%s %d %f",e[i].name,&e[i].rollno,&e[i].salary);
+     for(i=0;i<3;i++)
+     {
+    printf("%s %d %f",e[i].name,e[i].rollno,e[i].salary);
+    printf("\n");
+     }
+
+    return 0;
+}
+output:
+hema 45 4.5
+sailu 46 4.5
+priya 47 4.5
+hema 45 4.500000
+sailu 46 4.500000
+priya 47 4.500000
+
