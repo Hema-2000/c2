@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int len=3;
+typedef struct employee
+{
+    char name[5];
+    int rollno;
+    float salary;
+}emp;
+void print(emp *ptr)
+{
+   for(int i=0;i<len;i++)
+    {
+        printf("%s %d %f",(ptr+i)->name,(ptr+i)->rollno,(ptr+i)->salary);
+        printf("\n");
+    } 
+}
+int main()
+{
+    emp *ptr;
+    
+    ptr=(emp *)malloc(sizeof(emp)*len);
+    printf("enter the employee details");
+   for(int i=0;i<len;i++)
+       scanf("%s %d %f",ptr[i].name,&ptr[i].rollno,&ptr[i].salary);
+   print(ptr);
+    
+   return 0; 
+}
