@@ -1,0 +1,42 @@
+#include<stdio.h>
+#define R 2
+#define C 3
+int main()
+{
+    int arr[5][5],trans[5][5],i,j;
+    printf("enter the matrix elements:\n");
+    for(i=0;i<R;i++)
+    {
+    for(j=0;j<C;j++)
+    {
+    scanf("%d",&arr[i][j]);
+    }
+    }
+    printf("the matrix elements are:\n");
+    for(i=0;i<R;i++)
+    {
+    for(j=0;j<C;j++)
+    {
+    printf("%d ",arr[i][j]);
+    }
+    printf("\n");
+    }
+    printf("\n");
+    for(i=0;i<R;i++)
+    {
+    for(j=0;j<C;j++)
+    {
+        trans[j][i]=arr[i][j];
+    }
+    }
+    printf("the transpose of matrix :\n");
+    for(i=0;i<C;i++)
+    {
+    for(j=0;j<R;j++)
+    {
+    printf("%d ",trans[i][j]);
+    }
+    printf("\n");
+    }
+    printf("\n");
+}
