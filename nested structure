@@ -1,0 +1,36 @@
+#include <stdio.h>
+struct student_addr
+{
+    char street[10];
+     char district[10];
+     int door_no;
+};
+typedef struct student_data
+{
+    char name[10];
+    int roll;
+    float marks;
+    struct student_addr stu_add;
+    
+}s;
+
+int main()
+{
+    s stu;
+    strcpy(stu.name,"hema");
+    stu.roll=21;
+    stu.marks=4.5;
+    strcpy(stu.stu_add.street,"kcp");
+    strcpy(stu.stu_add.district,"vsp");
+    stu.stu_add.door_no=57;
+    printf("%s\n %d\n %f\n %s\n %s\n %d",stu.name,stu.roll,stu.marks,stu.stu_add.street,stu.stu_add.district,stu.stu_add.door_no);
+    return 0;
+}
+
+output:
+hema
+21
+ 4.500000
+ kcp
+ vsp
+ 57
