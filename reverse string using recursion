@@ -1,0 +1,42 @@
+#include<stdio.h>
+
+void reverse(char *s)
+{
+    if(*s!='\0')
+    {
+  reverse(s+1);
+  printf("%c",*s);
+}
+}
+int main() {
+  char s[10];
+  printf("enter the str:");
+  scanf("%s",s);
+reverse(s);
+  return 0;
+}
+
+
+
+
+2nd method:
+#include<stdio.h>
+
+char reverse()
+{
+    char s;
+    scanf("%c",&s);
+    if(s!='\n')
+    {
+  reverse();
+ 
+  printf("%c",s);
+}
+ return 0;
+}
+int main() {
+  printf("enter the str:");
+reverse();
+
+  return 0;
+}
