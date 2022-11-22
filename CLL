@@ -1,0 +1,211 @@
+#include<stdio.h>
+#include<stdlib.h>
+int count;
+struct node
+{
+    int data;
+    struct node *next;
+}*head;
+void create()
+{
+    struct node *newnode,*temp;
+     int ch;
+      head=0;
+    while(ch)
+    {
+    newnode=(struct node*)malloc(sizeof(struct node));
+    printf("enter the data:");
+    scanf("%d",&newnode->data);
+    newnode->next=0;
+   
+   
+    if(head==0)
+    {
+        head=temp=newnode;
+    }
+    else
+    {
+        temp->next=newnode;
+        temp=newnode;
+    }
+    count++;
+    printf("enter 1 to create another node:");
+    scanf("%d",&ch);
+    }
+     newnode->next=head;
+}
+void display()
+{
+    struct node *temp;
+    temp=head;
+    while(temp->next!=head)
+    {
+        printf("%d ",temp->data);
+        temp=temp->next;
+    }
+     printf("%d ",temp->data);
+     printf("no. of nodes:%d",count);
+     
+}
+
+
+void ins_at_beg()
+{
+   struct node *newnode,*temp;
+    newnode=(struct node*)malloc(sizeof(struct node));
+   printf("enter date to insert:");
+   scanf("%d",&newnode->data);
+   
+   while(temp->next!=head)
+   {
+   temp=temp->next;
+   }
+   newnode->next=head;
+   head=newnode;
+   temp->next=head;
+   count++;
+}
+void ins_at_end()
+{
+   struct node *newnode,*temp;
+    newnode=(struct node*)malloc(sizeof(struct node));
+   temp=head;
+   printf("enter date to insert:");
+   scanf("%d",&newnode->data);
+   newnode->next=head;
+   while(temp->next!=head)
+   {
+       temp=temp->next;
+   }
+   temp->next=newnode;
+   count++;
+}
+void ins_at_mid()
+{
+   struct node *newnode,*temp;
+    newnode=(struct node*)malloc(sizeof(struct node));
+    int i=1,pos;
+    printf("enter the pos:");
+    scanf("%d",&pos);
+   printf("enter date to insert:");
+   scanf("%d",&newnode->data);
+   temp=head;
+  
+   while(i<pos-1)
+   {
+       temp=temp->next;
+       i++;
+   }
+   newnode->next=temp->next;
+   temp->next=newnode;
+   count++;
+}
+void del_at_beg()
+{
+   struct node *d,*temp;
+   
+   temp=head;
+   while(temp->next!=head)
+   {
+   temp=temp->next;
+   }
+   d=head;
+   head=head->next;
+   temp->next=head;
+   
+   count--;
+}
+void del_at_end()
+{
+   struct node *prevnode,*temp;
+   
+   temp=head;
+   while(temp->next!=head)
+   {
+       prevnode=temp;
+   temp=temp->next;
+   }
+  
+   prevnode->next=head;
+  
+   free(temp);
+   count--;
+}
+void del_at_mid()
+{
+   struct node *nextnode,*temp;
+   int pos,i=1;
+   printf("enter the pos:");
+   scanf("%d",&pos);
+   temp=head;
+   while(i<pos-1)
+     {
+         temp=temp->next;
+         i++;
+     }
+   nextnode=temp->next;
+   temp->next=nextnode->next;
+   free(nextnode);
+   count--;
+}
+int main()
+{
+    printf("CLL operations");
+    printf("\n create   dispaly     ins at beg   ins at end     ins at midd     del at beg      del at end    del at mid");
+    int choice;
+    do
+    {
+        printf("\nenter the choice:");
+        scanf("%d",&choice);
+        switch(choice)
+        {
+            case 1:
+            {
+            create();
+            break;
+            }
+            case 2:
+            {
+            display();
+            break;
+            }
+           case 3:
+            {
+            ins_at_beg();
+            break;
+            }
+            case 4:
+            {
+            ins_at_end();
+            break;
+            }
+            case 5:
+            {
+            ins_at_mid();
+            break;
+            }
+            case 6:
+            {
+            del_at_beg();
+            break;
+            }
+           case 7:
+            {
+            del_at_end();
+            break;
+            }
+            case 8:
+            {
+            del_at_mid();
+            break;
+            }
+            default:
+            {
+                printf("please enter a valid choice:");
+            }
+            
+        }
+        
+    }
+    while(choice!=9);
+}
