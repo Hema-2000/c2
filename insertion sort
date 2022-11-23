@@ -1,0 +1,28 @@
+#include<stdio.h>
+ insertion_sort(int arr[],int size)
+ {
+     int value,i,index;
+     for(i=1;i<size;i++)
+     {
+         value=arr[i];
+         index=i;
+         while(index>0 && arr[index-1]>value)
+         {
+             arr[index]=arr[index-1];
+             index--;
+         }
+         arr[index]=value;
+     }
+ 
+     for(i=0;i<size;i++)
+     {
+         printf("%d ",arr[i]);
+     }
+ }
+int main()
+{
+    int arr[]={60,50,10,30,90};
+    int size=sizeof(arr)/sizeof(int);
+    insertion_sort(arr,size);
+    return 0;
+}
