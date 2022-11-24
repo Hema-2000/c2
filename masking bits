@@ -1,0 +1,11 @@
+#include<stdio.h>
+int main()
+{
+    int a=7;
+    int x,y,z;
+    int pos1=6,pos2=3;
+    x=(1<<pos1-1)-1;
+    y=(a>>(pos2-1));
+    z=x&y;
+    printf("%d",z);
+}
