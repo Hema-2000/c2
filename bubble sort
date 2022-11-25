@@ -7,7 +7,7 @@ Code, Compile, Run and Debug online from anywhere in world.
 
 *******************************************************************************/
 #include <stdio.h>
-int selection_sort(int arr[],int size );
+int bubble_sort(int arr[],int size );
 int print(int arr[],int size);
 int swap(int *x,int *y)
 {
