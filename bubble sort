@@ -20,12 +20,12 @@ int main()
 {
     int arr[]={20,80,60,10,50};
     int size=sizeof(arr)/sizeof(int);
-    selection_sort(arr,size);
+    bubble_sort(arr,size);
     printf("the sorted elements in an array:\n");
     print(arr,size);
     return 0;
 }
-int selection_sort(int arr[],int size)
+int bubble_sort(int arr[],int size)
 {
     int i,j;
     for(int i=0;i<size;i++)
