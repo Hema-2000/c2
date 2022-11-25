@@ -1,28 +1,20 @@
 #include<stdio.h>
 int main()
 {
-    int arr[8]={1,2,2,3,3,3,5,5};
+    int arr[8]={1,1,1,3,3,8,5,5};
     int size=sizeof(arr)/sizeof(int);
     int b[size];
     int i,j;
     for(i=0;i<size;i++)
     {
-        int count=1;
-        for( j=i+1;j<size;j++)
+        for( j=0;j<size;j++)
         {
-            if(arr[i]==arr[j])
-            {
-            count++;
-            b[j]=-1;
-            }
+            if(arr[i]==arr[j] && i!=j)
+            
+           break;
         }
-        if(b[i]!=-1)
-    b[i]=count;
+            if(j==size)
+            printf("%d",arr[i]);
     }
-    
-    for(i=0;i<size;i++)
-    {
-         if(b[i]!=-1)
-        printf("%d element freq is %d\n",arr[i],b[i]);
-    }
+        
 }
