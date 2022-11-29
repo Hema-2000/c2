@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include<string.h>
+void *mc(void *dest,void *src, int size)
+{
+  char *d= (char *)dest; 
+  char *s= (char *)src; 
+  int i;
+  for(i=0;i<size;i++)
+  {
+      d[i]=s[i];
+  }
+  d[i]='\0';
+}
+int main()
+{
+    char src[]="hema";
+    char dest[20];
+    int l1=strlen(src);
+    mc(dest,src,l1+1);
+    printf("%s", dest);
+}
