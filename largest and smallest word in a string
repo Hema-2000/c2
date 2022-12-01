@@ -1,0 +1,42 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[]="this world is a wonderful";
+     int len=strlen(str);
+    char s[100][100],min[100],max[100];
+    int k,i=0,j=0;
+    for(k=0;k<len;k++)
+    {
+    if(str[k]!=' ' && str[k]!='\0')
+    {
+        s[i][j++]=str[k];
+    }
+    else
+    {
+        s[i][j]='\0';
+        i++;
+        j=0;
+    }
+}
+int l=i+1;
+strcpy(min,s[0]);
+strcpy(max,s[0]);
+for(k=0;k<l;k++)
+{
+    if(strlen(min)>strlen(s[k]))
+    {
+    strcpy(min,s[k]);
+    }
+    else if(strlen(max)<strlen(s[k]))
+    {
+    strcpy(max,s[k]);
+    }
+}
+printf("the max and min words in a string are: %s %s",min,max);
+}
+
+
+
+output:
+the max and min words in a string are: a wonderful
