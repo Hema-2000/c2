@@ -1,0 +1,27 @@
+#include<stdio.h>
+int main()
+{
+ int arr[]={2,3,4,5,6};
+ int target=9;
+ int i,j,sum=0,index1,index2,a,b;
+ for(i=0;i<5;i++)
+ {
+     for(j=0;j<5;j++)
+     {
+         sum=arr[j]+arr[j+1];
+         if(sum==target)
+         {
+             index1=j;
+             index2=j+1;
+             a=arr[j];
+             b=arr[j+1];
+            
+         }
+     }
+ }
+ printf("%d %d",index1,index2);
+  printf("\n%d %d",a,b);
+  printf("\n%d",a+b);
+}
+
+
