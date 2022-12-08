@@ -1,0 +1,34 @@
+#include<stdio.h>
+int bin(int a)
+{
+    int arr[100];
+    int i=0,j;
+     while(a>0)
+    {
+        arr[i]=a%2;
+        a=a/2;
+        i++;
+    }
+    for(j=i-1;j>=0;j--)
+    {
+        printf("%d",arr[j]);
+    }
+    
+}
+int main()
+{
+    int a=10,j,i;
+    int p1=1,p2=2;
+    printf("before swaping the bin representation is:");
+    bin(a);
+   
+    int x=(a>>(p1-1))&1;
+    int y=(a>>(p2-1)) &1;
+    int z=x^y;
+    z=(z<<(p1-1))|(z<<(p2-1));
+    int res=z^a;
+    printf("\n");
+   printf("%d",res);
+    printf("\nafter swaping the bin representation is:");
+     bin(res);
+}
