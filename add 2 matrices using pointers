@@ -1,0 +1,59 @@
+#include<stdio.h>
+int main()
+{
+    int arr[2][3],arr1[2][3],res[2][3];
+    int i,j;
+    for(i=0;i<2;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+      scanf("%d",(*(arr+i)+j));  
+    }
+    }
+    for(i=0;i<2;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+      scanf("%d",(*(arr1+i)+j));  
+    }
+    }
+     for(i=0;i<2;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+      printf("%d ",*(*(arr+i)+j)); 
+      
+    }
+    printf("\n");
+    }
+    printf("\n");
+    printf("\n");
+    for(i=0;i<2;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+      printf("%d ",*(*(arr1+i)+j)); 
+      
+    }
+    printf("\n");
+    }
+    printf("\n");
+    for(i=0;i<2;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            *(*(res+i)+j)=*(*(arr1+i)+j) + *(*(arr+i)+j);
+        }
+    }
+    for(i=0;i<2;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+      printf("%d ",*(*(res+i)+j)); 
+      
+    }
+    printf("\n");
+    }
+    printf("\n");
+            
+}
