@@ -1,0 +1,142 @@
+/*to set and clear particular nth bit */
+#include<stdio.h>
+void lsb(int a,int b)
+{
+    int res;
+    res=(a | (1<<(b-1)));// set the bit at particular pos
+    res=(a ^ (1<<(b-1)));// clear the bit at particular pos//for toggling a particular pos
+    printf("%d",res);
+       
+}
+int main()
+{
+    int a,n;
+    void (*fptr)(int,int);
+    fptr=&lsb;
+    fptr(9,3);
+    
+    
+}
+
+
+/*highest set bit in a num*/
+#include<stdio.h>
+#define SIZE sizeof(int)*8
+void lsb(int a)
+{
+    int i,r=-1;
+    printf("enter the value of a:");
+    scanf("%d",&a);
+    for(i=0;i<SIZE;i++)
+    {
+        if((1 & (a>>i))==1)
+        r=i;
+    }
+    if(r!=-1)
+    printf("the highest set bit in %d is %d",a,r);
+    else
+    printf("there are no set bits");
+    
+       
+}
+int main()
+{
+    int a;
+    void (*fptr)(int);
+    fptr=&lsb;
+    fptr(a);
+    
+    
+}
+
+/*lowest set bit of num*/
+#include<stdio.h>
+#define SIZE sizeof(int)*8
+void lsb(int a)
+{
+    int i,r=SIZE-1;
+    printf("enter the value of a:");
+    scanf("%d",&a);
+    for(i=0;i<SIZE;i++)
+    {
+        if((1 & (a>>i))==1)
+        {
+        r=i;
+        break;
+        }
+    }
+    printf("the highest set bit in %d is %d",a,r);
+       
+}
+int main()
+{
+    int a;
+    void (*fptr)(int);
+    fptr=&lsb;
+    fptr(a);
+    
+    
+}
+
+
+/*trailing bits in a bin num*/
+#include<stdio.h>
+#define SIZE sizeof(int)*8
+void lsb(int a)
+{
+    int i,count=0;
+    printf("enter the value of a:");
+    scanf("%d",&a);
+    for(i=0;i<SIZE;i++)
+    {
+        if((1 & (a>>i))==1)
+        {
+        
+        break;
+        }
+        count++;
+    }
+    printf("the trailing bits in aa given num  is  %d",count);
+       
+}
+int main()
+{
+    int a;
+    void (*fptr)(int);
+    fptr=&lsb;
+    fptr(a);
+    
+    
+}
+
+/*leading bits in a bin num*/
+
+#include<stdio.h>
+#define SIZE 8
+void lsb(int a)
+{
+    int i,count=0,msb;
+    printf("enter the value of a:");
+    scanf("%d",&a);
+    msb=1<<(SIZE-1);
+    for(i=0;i<SIZE;i++)
+    {
+        if((a<<i) & msb)
+        {
+        
+        break;
+        }
+        count++;
+    }
+    printf("the leading bits in a given num  is  %d",count);
+       
+}
+int main()
+{
+    int a;
+    void (*fptr)(int);
+    fptr=&lsb;
+    fptr(a);
+    
+    
+}
