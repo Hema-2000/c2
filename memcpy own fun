@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<string.h>
+void mem_cpy(void *str1,void *str2,int n)
+{
+    int i;
+    char *src=(char *)(str1);
+    char *des=(char *)(str2);
+    for(i=0;i<n;i++)
+    {
+        des[i]=src[i];
+    }
+    
+   printf("%s",des);
+
+}
+int main()
+{
+    char str1[100]="hemalatha";
+    char str2[100];
+    int size=(strlen(str1))+1;
+    mem_cpy(str1,str2,size);
+     
+}
