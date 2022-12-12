@@ -1,0 +1,17 @@
+#include<stdio.h>
+#define SIZE 8
+void rotate_bits(int a,int b)
+{
+    int left_rotate=(a<<b)|((a>>(SIZE-b)));
+    printf("%d",left_rotate);
+    int right_rotate=(a>>b)|((a<<(SIZE-b))); 
+    printf("\n");
+    printf("%d",right_rotate);
+}
+int main()
+{
+    int a=2,d=2;
+    void (*fptr)(int,int);
+    fptr=&rotate_bits;
+    fptr(a,d);
+}
