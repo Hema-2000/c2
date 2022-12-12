@@ -27,3 +27,48 @@ int main()
     //fptr(str);
     printf("%d",fptr(str));
 }
+
+
+
+
+method-2:
+
+#include<stdio.h>
+//int count=0;
+#include<string.h>
+void lar_str(char str[])
+{
+    int i=0,j=0,k,count=0;
+    char s[100][100];
+    for(k=0;str[k]!='\0';k++)
+    {
+       if(str[k]!=32)
+       {
+          s[i][j++]=str[k]; 
+       }
+       else
+       {
+           s[i][j]='\0';
+           i++;
+           j=0;
+       }
+    }
+       int len=i+1;
+       char max[100];
+       strcpy(max,s[0]);
+       for(k=0;k<len;k++)
+       {
+           if(strlen(max)<strlen(s[k]))
+           strcpy(max,s[k]);
+       }
+       int l=strlen(max);
+       printf("the largest str is %s and its count is %d",max,l);
+       
+}
+int main()
+{
+    char str[]="my name is hemalatha ";
+    void (*fptr)(char[]);
+    fptr=lar_str;
+    fptr(str);
+}
