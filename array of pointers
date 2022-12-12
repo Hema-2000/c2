@@ -1,0 +1,12 @@
+#include<stdio.h>
+int main()
+{
+    char *ptr[]={"red","blue","Yellow"};
+    int size=sizeof(ptr)/sizeof(ptr[0]);
+    int i;
+    for(int i=0;i<size;i++)
+    {
+        printf(" %s ",ptr[i]);
+    }
+    return 0;
+}
