@@ -1,0 +1,60 @@
+swaping of numbers using bitwise operators
+
+#include<stdio.h>
+#define SIZE 8
+void swap(int a,int b)
+{
+    a=a^b;
+    b=a^b;
+    a=a^b;
+    printf("\nafter swaping : a=%d b=%d",a,b);
+   
+}
+int main()
+{
+    int a=10,b=12;
+    printf("before swaping : a=%d b=%d",a,b);
+    void (*fptr)(int,int);
+    fptr=&swap;
+    fptr(a,b);
+}
+
+
+
+To check whether given no is even or odd using bitwise operators
+#include<stdio.h>
+void even_odd(int a)
+{
+    if((a &1)==1)
+    printf("given num is odd");
+    else
+    printf("given num is even");
+}
+int main()
+{
+    int a;
+    printf("enter the value of a:");
+    scanf("%d",&a);
+    void (*fptr)(int);
+    fptr=&even_odd;
+    fptr(a);
+}
+
+
+To find size of variable without using size of operator
+#include<stdio.h>
+#define size_of(var) (char*)(&var+1) - (char*)(&var)
+int main()
+{
+    int var;
+    printf("%ld",size_of(var));
+    char a;
+    printf(" %ld",size_of(a));
+    double d;
+    printf(" %ld",size_of(d));
+    float s;
+    printf(" %ld",size_of(s));
+    
+}
+
+
