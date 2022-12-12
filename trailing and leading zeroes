@@ -1,0 +1,50 @@
+#include<stdio.h>
+#define SIZE 8
+int trailing(int a)
+{
+    int i,count=0;
+    for(i=0;i<SIZE;i++)
+{
+    
+     if((1 & (a>>i))==1)
+     {
+     break;
+     }
+     count++;
+}
+ printf("%d",count); 
+}
+
+int main()
+{
+    int a=10;
+    int (*fptr)(int);
+    fptr=&trailing;
+    fptr(a);
+}
+
+
+#include<stdio.h>
+#define SIZE 8
+int leading_bit(int a)
+{
+    int i,count=0,msb;
+    msb=1<<(SIZE-1);
+    for(i=0;i<SIZE;i++)
+{
+    
+     if((msb & (a<<i)))
+    {
+     break;
+     }
+     count++;
+}
+ printf("%d",count); 
+}
+int main()
+{
+    int a=7;
+    int (*fptr)(int);
+    fptr=&leading_bit;
+    fptr(a);
+}
