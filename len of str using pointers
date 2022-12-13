@@ -1,0 +1,24 @@
+#include<stdio.h>
+int len(char *str)
+{
+    int l=0;
+    while(*str!='\0')
+    
+    {
+        l++;
+        str++;
+    }
+    return l;
+    
+}
+int main()
+{
+    char str[100];
+    printf("enter the str:");
+    scanf("%s",str);
+    char *ptr=str;
+    int (*fptr)(char[]);
+    fptr=len;
+    int length=fptr(ptr);
+    printf("%d",length);
+}
