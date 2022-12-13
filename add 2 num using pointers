@@ -1,0 +1,60 @@
+method:1
+
+#include<stdio.h>
+int sum(int *a,int *b)
+{
+    int sum;
+    sum=*a+*b;
+    return sum;
+    
+}
+int main()
+{
+    int a,b;
+    printf("enter the values of a & b");
+    scanf("%d %d",&a,&b);
+   
+    //sum(&a,&b);
+    printf("%d",sum(&a,&b));
+    
+}
+
+
+method:2
+
+#include<stdio.h>
+int main()
+{
+    int a,b;
+    printf("enter the values of a & b");
+    scanf("%d %d",&a,&b);
+   int *p=&a;
+   int *x=&b;
+   int sum=*p+*x;
+    printf("%d",sum);
+    
+}
+
+
+
+method:3
+
+#include<stdio.h>
+int sum(int *a,int *b)
+{
+    int s;
+    s=*a+*b;
+   printf("%d ",s);
+    return s;
+}
+int main()
+{
+    int a,b;
+    printf("enter the values of a & b");
+    scanf("%d %d",&a,&b);
+   int (*fptr)(int *,int *);
+   fptr=&sum;
+   int l=fptr(&a,&b);
+    printf("%d",l);
+    
+}
