@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<string.h>
+char reverse(char *p)
+{
+    int len=strlen(p);
+    int i,temp;
+    for(i=0;i<len/2;i++)
+    {
+       temp=p[i];
+       p[i]=p[len-i-1];
+       p[len-i-1]=temp;
+       
+    }
+    printf("%s",p);
+}
+int main()
+{
+    char str[100];
+    printf("enter the str:");
+    scanf("%s",str);
+    char *ptr=str;
+    char (*fptr)(char *);
+    fptr=reverse;
+    fptr(ptr);
+}
