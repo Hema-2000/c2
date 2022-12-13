@@ -1,0 +1,60 @@
+#include<stdio.h>
+int main()
+{
+    int arr[10][10];
+    int r,c,i,j;
+    printf("enter the rows and columns :");
+    scanf("%d %d",&r,&c);
+    int *ptr=&arr[10][10];
+    printf("enter the array elements:");
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            scanf("%d",(ptr + i * c + j));
+        }
+    }
+   for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            printf("%d ",*(ptr + i * c + j));
+        }
+        printf("\n");
+    }
+     
+}
+
+
+second method using double pointer and dynamic memory allocation
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int arr[10][10];
+    int **ptr,r,c,i,j;
+    printf("enter the rows and columns :");
+    scanf("%d %d",&r,&c);
+    printf("enter the array elements:");
+    ptr=(int **)malloc(sizeof(int*)*r);
+    for(i=0;i<r;i++)
+    {
+        *(ptr+i)=(int *)malloc(sizeof(int)*r);
+    }
+        for(i=0;i<r;i++)
+        {
+        for(j=0;j<c;j++)
+        {
+            scanf("%d",(*(ptr+i)+j));
+        }
+    }
+   for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            printf("%d ",*(*(ptr+i)+j));
+        }
+        printf("\n");
+    }
+     
+}
