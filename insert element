@@ -1,0 +1,33 @@
+#include<stdio.h>
+int insert(int *ptr,int len)
+{
+    int e,i,pos;
+    printf("enter the element & pos to insert");
+    scanf("%d %d",&e,&pos);
+    for(i=1;i<=len-pos;i++)
+    {
+        ptr[len-i]=ptr[len-i-1];
+    }
+    ptr[pos-1]=e;
+    for(i=0;i<len;i++)
+    {
+        printf("%d ",*(ptr+i));
+    }
+    return 0;
+}
+int main()
+{
+    int arr[10];
+    int *p=arr;
+    int len,i;
+    printf("enter the size of an arr");
+    scanf("%d",&len);
+    printf("enter the elements in an array:");
+    for(i=0;i<len;i++)
+    {
+        scanf("%d",(p+i));
+    }
+    int (*fptr)(int *,int);
+    fptr=insert;
+    fptr(p,len);
+}
