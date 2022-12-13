@@ -1,0 +1,53 @@
+method:1
+
+#include<stdio.h>
+int swap(int *a,int *b)
+{
+    *a=*a+*b;
+    *b=*a-*b;
+    *a=*a-*b;
+    printf("%d %d",*a,*b);
+}
+int main()
+{
+    int a,b;
+    printf("enter the values of a & b");
+    scanf("%d %d",&a,&b);
+   int (*fptr)(int *,int *);
+   fptr=&swap;
+   fptr(&a,&b);
+}
+
+method:2
+
+#include<stdio.h>
+int swap(int *a,int *b)
+{
+    *a=*a+*b;
+    *b=*a-*b;
+    *a=*a-*b;
+    printf("%d %d",*a,*b);
+}
+int main()
+{
+    int a,b;
+    printf("enter the values of a & b");
+    scanf("%d %d",&a,&b);
+    swap(&a,&b);
+}
+
+method:3
+
+#include<stdio.h>
+int main()
+{
+    int a,b;
+    printf("enter the values of a & b");
+    scanf("%d %d",&a,&b);
+    int *p=&a;
+    int *p1=&b;
+    *p=*p+*p1;
+    *p1=*p-*p1;
+    *p=*p-*p1;
+    printf("%d %d",*p,*p1);
+}
