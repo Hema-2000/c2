@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include<string.h>
+char copy(char *p1,char *p2)
+{
+    static int i=0,count=0;
+    int len1,len2;
+    len1=strlen(p2);
+    len2=strlen(p1);
+    if(len1!=len2)
+    return 0;
+    else if(i<len1)
+    {
+        if(p1[i]==p2[i])
+        count++;
+        i++;
+        copy(p1,p2);
+    }
+    if(count==i)
+    return 1;
+    else 
+    return 0;
+    
+    
+}
+int main()
+{
+    char s1[100],s2[100];
+    char *p1=s1,*p2=s2;
+    printf("enter 1st str:");
+    scanf("%s",s1);
+    printf("enter second str:");
+    scanf(" %s",s2);
+    char (*fptr)(char *,char *);
+    fptr=copy;
+    int c=fptr(p1,p2);
+    if(c==0)
+    printf("strings are not equal");
+    else
+    printf("strings are  equal");
+}
