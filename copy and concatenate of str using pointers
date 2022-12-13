@@ -1,0 +1,53 @@
+#include<stdio.h>
+char copy(char *p1,char *p2)
+{
+    int i=0;
+    while(p1[i]!='\0')
+    {
+        p2[i]=p1[i];
+        i++;
+    }
+    p2[i]='\0';
+    
+}
+int main()
+{
+    char s1[100],s2[100];
+    char *p1=s1,*p2=s2;
+    scanf("%s",s1);
+    char (*fptr)(char *,char *);
+    fptr=copy;
+    fptr(p1,p2);
+    printf("%s",p2);
+}
+
+
+concatenate
+
+#include<stdio.h>
+#include<string.h>
+char copy(char *p1,char *p2)
+{
+    int i=0,len;
+   
+    len=strlen(p1);
+    for(i=0;p2[i]!='\0';i++)
+    {
+        p1[len+i]=p2[i];
+    }
+    p1[len+i]='\0';
+    
+}
+int main()
+{
+    char s1[100],s2[100];
+    char *p1=s1,*p2=s2;
+    printf("enter 1st str:");
+    scanf("%s",s1);
+    printf("enter second str:");
+    scanf(" %s",s2);
+    char (*fptr)(char *,char *);
+    fptr=copy;
+    fptr(p1,p2);
+    printf("%s",p1);
+}
