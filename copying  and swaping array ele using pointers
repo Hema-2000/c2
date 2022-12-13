@@ -1,0 +1,78 @@
+#include<stdio.h>
+int print(int *ptr,int *ptr1,int n)
+{
+    int i;
+     printf("enter the array elements");
+   for(int i=0;i<n;i++)
+       scanf("%d",(ptr+i));
+   for(int i=0;i<n;i++)
+       printf("%d ",*(ptr+i));
+       printf("\n");
+       for(i=0;i<n;i++)
+           *(ptr1+i)=*(ptr+i);
+       for(int i=0;i<n;i++)
+       printf("%d ",*(ptr1+i));
+    
+}
+int main()
+{
+   int arr[10],arr1[10],n;
+   int *ptr=arr;
+   int *ptr1=arr1;
+   printf("enter the size of arr");
+   scanf("%d",&n);
+   int (*fptr)(int *,int *,int);
+   fptr=print;
+   fptr(arr,arr1,n);
+   
+}
+
+
+
+swapping
+
+#include<stdio.h>
+int print(int *ptr,int *ptr1,int n)
+{
+    int i,j,temp;
+     printf("enter the 1st array elements:");
+     for(i=0;i<n;i++)
+     scanf("%d",(ptr+i));
+     printf("enter the 2nd array elements:");
+     for(i=0;i<n;i++)
+     scanf("%d",(ptr1+i));
+     printf("before swaping 1st arr elements:");
+     for(i=0;i<n;i++)
+       printf("%d ",*(ptr+i));
+       printf("\n");
+      printf("before swaping 2nd arr elements:") ; 
+      for(i=0;i<n;i++)
+       printf("%d ",*(ptr1+i));
+       printf("\n");
+       for(i=0;i<n;i++)
+       {
+              temp=*(ptr+i);
+              *(ptr+i)=*(ptr1+i);
+              *(ptr1+i)=temp;
+       }
+       printf("after swaping 1st arr ele are: ");
+       for(i=0;i<n;i++)
+       printf("%d ",*(ptr+i));
+       printf("\n");
+       printf("after swaping 2st arr ele are: ");
+       for(i=0;i<n;i++)
+       printf("%d ",*(ptr1+i));
+    
+}
+int main()
+{
+   int arr[10],arr1[10],n;
+   int *ptr=arr;
+   int *ptr1=arr1;
+   printf("enter the size of arr");
+   scanf("%d",&n);
+   int (*fptr)(int *,int *,int);
+   fptr=print;
+   fptr(arr,arr1,n);
+   
+}
