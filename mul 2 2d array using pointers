@@ -1,0 +1,67 @@
+#include<stdio.h>
+int main()
+{
+    int arr[10][10],arr1[10][10],res[10][10];
+    int i,j,r,c,k,sum=0;
+    printf("enter the elements of r , c");
+    scanf("%d %d",&r,&c);
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+      scanf("%d",(*(arr+i)+j));  
+    }
+    }
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+      scanf("%d",(*(arr1+i)+j));  
+    }
+    }
+     for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+      printf("%d ",*(*(arr+i)+j)); 
+      
+    }
+    printf("\n");
+    }
+    printf("\n");
+    printf("\n");
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+      printf("%d ",*(*(arr1+i)+j)); 
+      
+    }
+    printf("\n");
+    }
+    printf("\n");
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            for(k=0;k<c;k++)
+            {
+                
+            sum=0;
+            sum=sum + *(*(arr1+i)+j) * *(*(arr+i)+j);
+            }
+           *(*(res+i)+j)=sum; 
+        }
+    }
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+      printf("%d ",*(*(res+i)+j)); 
+      
+    }
+    printf("\n");
+    }
+    printf("\n");
+            
+}
