@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<stdlib.h>
+void words(char *arr)
+{
+   int i,count=0;
+   for(i=0;arr[i]!='\0';i++)
+   {
+       if(arr[i]==32)
+       {
+           count++;
+       }
+   }
+   if(count>0)
+   count++;
+   printf("%d",count);
+}
+int main()
+{
+    char str[100];
+    char *ptr=str;
+    ptr=(char *)malloc(sizeof(char));
+    printf("enter the string:");
+    fgets(ptr,100,stdin); 
+    void (*fptr)(char *);
+    fptr=words;
+    fptr(ptr);
+    
+}
