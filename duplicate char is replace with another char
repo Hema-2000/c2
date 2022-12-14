@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+void remove_occ(char *a,char ch)
+{
+    char c;
+    printf("enter the char to remove :");
+    scanf(" %c",&c);
+    int l=strlen(a);
+    int i,j,k;
+    for(i=0;i<l;i++)
+    {
+       if(a[i]==c)
+       {
+           a[i]=ch;
+       }
+    }
+    printf("after removing final str is %s",a);
+}
+int main()
+{
+    char *p=(char *)malloc(sizeof(char)*100);
+    char ch;
+    printf("enter the string:");
+    fgets(p,100,stdin);
+    printf("enter the string to replace char:");
+    scanf(" %c",&ch);
+    void (*fptr)(char *,char);
+    fptr=remove_occ;
+    fptr(p,ch);
+}
