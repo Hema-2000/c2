@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<stdlib.h>
+int sum(int arr[],int n,int s)
+{
+  if(s>n)
+  return 0;
+  else
+  return (arr[s]+sum(arr,n,s+1));
+}
+int main()
+{
+    int arr[100],n,s=0;
+    printf("enter the size of an arr:");
+    scanf("%d",&n);
+    int *ptr=(int *)malloc(n*sizeof(int));
+    printf("enter the array elements:");
+    for(int i=0;i<n;i++)
+    scanf("%d",ptr+i);
+    int (*fptr)(int [],int,int);
+    fptr=sum;
+    printf("%d",fptr(ptr,n,s));
+}
