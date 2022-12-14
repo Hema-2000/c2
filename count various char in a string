@@ -1,0 +1,56 @@
+#include<stdio.h>
+void string(char *arr)
+{
+    int i,count_alphabets=0,count_spe_char=0,count_digits=0;
+    for(i=0;arr[i]!='\0';i++)
+    {
+        if(arr[i]>=97 && arr[i]<=122)
+            count_alphabets++;
+        else if(arr[i]>=32 && arr[i]<=47 || arr[i]>=58 && arr[i]<=64 || arr[i]>=91 && arr[i]<=96 || arr[i]>=123 && arr[i]<=126)
+            count_spe_char++;
+        else
+            count_digits++;
+    }
+    printf("total no. of alpha:%d\n total no. of special char:%d\n total no. of digits:%d",count_alphabets,count_spe_char,count_digits);
+}
+int main()
+{
+    char str[100];
+    printf("enter the string:");
+    scanf("%s",str);
+    char *ptr=str;
+    void (*fptr)(char *);
+    fptr=string;
+    fptr(ptr);
+    
+}
+
+
+count vowels and strings
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+char vowels_const(char *str)
+{
+    int i,count_vowels=0,count_constants=0;
+    for(i=0;str[i]!='\0';i++)
+    {
+        if(str[i]=='a' || str[i]=='e' || str[i]=='i' || str[i]=='o' || str[i]=='u' || str[i]=='A' || str[i]=='E' || str[i]=='I' || str[i]=='0' || str[i]=='U')
+        count_vowels++;
+        else
+        count_constants++;
+    }
+    printf("total no. of vowels in a string :%d\n total no. of constants in a string:%d",count_vowels,count_constants);
+}
+int main()
+{
+    char str[100];
+    printf("enter the string:");
+    scanf("%s",str);
+    //int l=strlen(str);
+    //char *ptr=(char *)malloc(strlen(str)+1);
+   char *ptr=str;
+    char (*fptr)(char *);
+    fptr=vowels_const;
+    fptr(ptr);
+}
