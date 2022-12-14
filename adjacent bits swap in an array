@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<stdlib.h>
+int alter_swap(int arr[100],int n)
+{
+    int i,temp;
+    for(i=0;i<n-1;i=i+2)//for(i=0;i<n/2;i++)(for alternate)
+    {
+       temp=arr[i];
+       arr[i]=arr[i+1];//arr[i+2](for alternate)
+       arr[i+1]=temp;
+    }
+    for(i=0;i<n;i++)
+    printf("%d ",arr[i]);
+}
+int main()
+{
+    int arr[100],n;
+    printf("enter the size of an arr:");
+    scanf("%d",&n);
+    int *ptr=(int *)malloc(n*sizeof(int));
+    printf("enter the array elements:");
+    for(int i=0;i<n;i++)
+    scanf("%d",ptr+i);
+    int (*fptr)(int [],int);
+    fptr=alter_swap;
+    fptr(ptr,n);
+    //printf("%d",fptr(ptr,n));
+}
