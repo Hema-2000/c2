@@ -1,0 +1,39 @@
+#include<stdio.h>
+#include<string.h>
+int sort(int *arr,int n)
+{
+    int i,j,temp;
+   printf("enter the array elements");
+   for(i=0;i<n;i++)
+   {
+       scanf("%d",&arr[i]);
+   }
+   for(i=0;i<n;i++)
+   {
+       for(j=i+1;j<n;j++)
+       {
+           
+       
+       if(arr[i]>arr[j])
+       {
+           temp=arr[i];
+           arr[i]=arr[j];
+           arr[j]=temp;
+       }
+       }
+   }
+    for(i=0;i<n;i++)
+    {
+    printf("%d",arr[i]);
+    }
+}
+int main()
+{
+    int arr[100],n;
+    printf("enter the size");
+    scanf("%d",&n);
+    int *ptr=arr;
+    int (*fptr)(int *,int);
+    fptr=sort;
+    fptr(ptr,n);
+}
