@@ -1,0 +1,51 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+void high_occ_char(char *a)
+{
+    int max,min,i,j;
+    int l=strlen(a);
+    int b[l];
+    char min_ch=a[0];
+    char max_ch=a[0];
+    for(i=0;i<l;i++)
+    {
+        b[i]=1;
+        for(j=i+1;j<l;j++)
+        {
+            if(a[i]==a[j] && a[i]!='1')
+            {
+                b[i]++;
+                a[j]='1';
+            }
+        }
+    }
+    min=max=b[0];
+    for(i=0;i<l;i++)
+    {
+        if(min>b[i] && a[i]!='1')
+        {
+           min=b[i];
+           min_ch=a[i];
+        }
+    }
+    for(i=0;i<l;i++)
+    {
+        if(max<b[i] && a[i]!='1')
+        {
+           max=b[i];
+           max_ch=a[i];
+        }
+    }
+    printf("%c ",max_ch);
+     printf("%c ",min_ch);
+}
+int main()
+{
+    char *p=(char *)malloc(sizeof(char)*100);
+    printf("enter the string:");
+    fgets(p,100,stdin);
+    void (*fptr)(char *);
+    fptr=high_occ_char;
+    fptr(p);
+}
