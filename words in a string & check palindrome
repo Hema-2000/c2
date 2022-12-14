@@ -1,0 +1,60 @@
+#include<stdio.h>
+#include<stdlib.h>
+void words(char *arr)
+{
+   int i,count=0;
+   for(i=0;arr[i]!='\0';i++)
+   {
+       if(arr[i]==32)
+       {
+           count++;
+       }
+   }
+   if(count>0)
+   count++;
+   printf("%d",count);
+}
+int main()
+{
+    char str[100];
+    char *ptr=str;
+    ptr=(char *)malloc(sizeof(char));
+    printf("enter the string:");
+    fgets(ptr,100,stdin); 
+    void (*fptr)(char *);
+    fptr=words;
+    fptr(ptr);
+    
+}
+
+
+to check string is palindrome
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int palind(char *arr)
+{
+   int i,flag=0;
+   int len=strlen(arr);
+   for(i=0;i<len;i++)
+   {
+      if(arr[i]!=arr[len-i-1])
+      {
+      flag=1;
+      break;
+      }
+   }
+  (flag==1)?printf("string is not palindrome"):printf("string is palindrome");
+}
+
+int main()
+{
+    char str[100];
+    printf("enter the string:");
+    scanf("%s",str);
+    char *ptr=str;
+    int (*fptr)(char *);
+    fptr=palind;
+    fptr(ptr);
+    
+}
