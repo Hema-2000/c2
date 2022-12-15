@@ -1,0 +1,64 @@
+#include<stdio.h>
+#include<stdlib.h>
+int insert(int *arr ,int n)
+{
+    int e,p,i;
+    printf("enter the pos & element to insert:");
+    scanf("%d %d",&e,&p);
+    
+    for(i=1;i<=(n-p);i++)
+    {
+       arr[n-i]=arr[n-i-1];
+    }
+    arr[p-1]=e;
+    for(i=0;i<n;i++)
+    {
+       printf("%d ",arr[i]); 
+    }
+    
+    
+}
+int main()
+{
+    int arr[100],n;
+    printf("enter the size of an arr:");
+    scanf("%d",&n);
+    int *ptr=(int *)malloc(n*sizeof(int));
+    printf("enter the array elements:");
+    for(int i=0;i<n;i++)
+    scanf("%d",ptr+i);
+    int (*fptr)(int *,int);
+    fptr=insert;
+    fptr(ptr,n);
+}
+
+
+without deleting last element
+#include<stdio.h>
+#include<stdlib.h>
+int insert(int *arr ,int n)
+{
+    int e,p,i;
+    printf("enter the pos & element to insert:");
+    scanf("%d %d",&e,&p);
+    arr[p-1]=e;
+    for(i=0;i<n;i++)
+    {
+       printf("%d ",*(arr+i)); 
+    }
+    
+    
+}
+int main()
+{
+    int arr[100],n;
+    printf("enter the size of an arr:");
+    scanf("%d",&n);
+    int *ptr=(int *)malloc(n*sizeof(int));
+    printf("enter the array elements:");
+    for(int i=0;i<n;i++)
+    scanf("%d",ptr+i);
+    int (*fptr)(int *,int);
+    fptr=insert;
+    fptr(ptr,n);
+}
