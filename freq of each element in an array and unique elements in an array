@@ -1,0 +1,39 @@
+#include<stdio.h>
+#include<stdlib.h>
+int freq_ele(int *p,int n)
+{
+    int b[n],i,j,count=0;
+    for(i=0;i<n;i++)
+    {
+        count=1;
+        for(j=i+1;j<n;j++)
+        {
+            if(p[i]==p[j])
+            {
+                count++;
+                b[j]=-1;
+            }
+        }
+        if(b[i]!=-1)
+        b[i]=count;
+    }
+    for(i=0;i<n;i++)
+    {
+       if(b[i]!=-1)//same program for unique element only diff is b[i]==1; then unique element is found either it may be 1 or more unique  elements
+       printf("%d:%d\n",p[i],b[i]);
+    }
+}
+int main()
+{
+    
+    int arr[100],n,i;
+    printf("enter the size of an array:");
+    scanf("%d",&n);
+    int *ptr=(int *)malloc(n*sizeof(int));
+    printf("enter the array elements:");
+    for(i=0;i<n;i++)
+        scanf("%d",ptr+i);
+    int (*fptr)(int *,int);
+    fptr=freq_ele;
+    fptr(ptr,n);
+}
