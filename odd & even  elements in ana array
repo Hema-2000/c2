@@ -1,0 +1,58 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define N 2
+int even_odd(int arr[100],int n)
+{
+    int count_even=0,count_odd=0;
+    int i;
+    for(i=0;i<n;i++)
+    {
+        if(arr[i]%N==0)
+        count_even++;
+        else
+        count_odd++;
+    }
+    printf("%d %d",count_even,count_odd);
+}
+int main()
+{
+    int arr[100],n;
+    printf("enter the size of an arr:");
+    scanf("%d",&n);
+    int *ptr=(int *)malloc(n*sizeof(int));
+    printf("enter the array elements:");
+    for(int i=0;i<n;i++)
+    scanf("%d",ptr+i);
+    int (*fptr)(int [],int);
+    fptr=even_odd;
+    fptr(ptr,n);
+}
+
+count of negative num
+#include<stdio.h>
+#include<stdlib.h>
+#define N 2
+int negative(int arr[100],int n)
+{
+    int count_neg=0;
+    int i;
+    for(i=0;i<n;i++)
+    {
+        if(arr[i]<0)
+        count_neg++;
+    }
+    printf("%d",count_neg);
+}
+int main()
+{
+    int arr[100],n;
+    printf("enter the size of an arr:");
+    scanf("%d",&n);
+    int *ptr=(int *)malloc(n*sizeof(int));
+    printf("enter the array elements:");
+    for(int i=0;i<n;i++)
+    scanf("%d",ptr+i);
+    int (*fptr)(int [],int);
+    fptr=negative;
+    fptr(ptr,n);
+}
