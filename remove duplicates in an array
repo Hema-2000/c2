@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<stdlib.h>
+int freq_ele(int *p,int n)
+{
+    int b[n],i,j,k;
+    for(i=0;i<n;i++)
+    {
+        for(j=i+1;j<n;j++)
+        {
+            if(p[i]==p[j])
+            {
+               for(k=j;k<n-1;k++)
+               {
+                   p[k]=p[k+1];
+               }
+                  n--;
+                  j--;
+            }
+        }
+        
+    }
+    for(i=0;i<n;i++)
+    printf("%d",p[i]);
+}
+int main()
+{
+    
+    int arr[100],n,i;
+    printf("enter the size of an array:");
+    scanf("%d",&n);
+    int *ptr=(int *)malloc(n*sizeof(int));
+    printf("enter the array elements:");
+    for(i=0;i<n;i++)
+        scanf("%d",ptr+i);
+    int (*fptr)(int *,int);
+    fptr=freq_ele;
+    fptr(ptr,n);
+}
