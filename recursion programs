@@ -1,0 +1,207 @@
+print n natural numbers
+#include<stdio.h>
+#include<stdlib.h>
+int print(int n)
+{
+    if(n>1)
+     print(n-1);
+     printf("%d ",n);
+    
+}
+int main()
+{
+    int n;
+    printf("enter n value :");
+    scanf("%d",&n);
+    int (*fptr)(int);
+    fptr=sum_natural;
+fptr(n);
+}
+
+sum of n natural numbers
+#include<stdio.h>
+#include<stdlib.h>
+int sum_natural(int n1,int n2)
+{
+    if(n1==n2)
+    return n1;
+    else
+     return n1+sum_natural(n1+1,n2);
+     
+    
+}
+int main()
+{
+    int n1,n2;
+    printf("enter n values :");
+    scanf("%d %d",&n1,&n2);
+    int (*fptr)(int,int);
+    fptr=sum_natural;
+    int sum=fptr(n1,n2);
+    printf("%d",sum);
+}
+
+
+even and odd in a agiven range using 
+#include<stdio.h>
+#include<stdlib.h>
+int even(int n1,int n2)
+{
+    if(n1>n2)
+    return 0;
+    else if(n1%2==0)
+    printf("%d ",n1);
+    even(n1+1,n2);
+}
+
+int odd(int n1,int n2)
+{
+    if(n1>n2)
+    return 0;
+    else if(n1%2!=0)
+    printf("%d ",n1);
+    odd(n1+1,n2);
+}
+int main()
+{
+    int n1,n2;
+    printf("enter n values :");
+    scanf("%d %d",&n1,&n2);
+    int (*fptr)(int,int);
+    fptr=even;
+    fptr(n1,n2);
+    printf("\n");
+    int (*fptr1)(int,int);
+    fptr1=odd;
+    fptr1(n1,n2);
+}
+
+sum of even & odd 
+#include<stdio.h>
+#include<stdlib.h>
+int even_sum(int n1,int n2)
+{
+    if(n1>n2)
+    return 0;
+    else if(n1%2==0)
+    printf("%d ",n1);
+    return n1+even_sum(n1+1,n2);
+
+}
+
+int odd_sum(int n1,int n2)
+{
+    if(n1>n2)
+    return 0;
+    else if(n1%2!=0)
+    printf("%d ",n1);
+    return n1+odd_sum(n1+1,n2);
+}
+int main()
+{
+    int n1,n2;
+    printf("enter n values :");
+    scanf("%d %d",&n1,&n2);
+    int (*fptr)(int,int);
+    fptr=even_sum;
+    int s1=fptr(n1,n2);
+    printf("\n%d",s1);
+    printf("\n");
+    int (*fptr1)(int,int);
+    fptr1=odd_sum;
+    int s2=fptr1(n1,n2);
+     printf("\n%d",s2);
+}
+
+reversing a num
+#include<stdio.h>
+#include<stdlib.h>
+int sum=0,rem;
+int reverse(int n1)
+{
+    if(n1>0)
+    {
+       rem=n1%10;
+       sum=sum*10+rem;
+       reverse(n1/10);
+    }
+
+     return sum;//isame logic to check palindrome or not but compare(sum==n1)?palindrome:not palindrome;
+}
+
+int main()
+{
+    int n1;
+    printf("enter n value :");
+    scanf("%d",&n1);
+    int (*fptr)(int);
+    fptr=reverse;
+    int s1=fptr(n1);
+    printf("after reversing the num is %d",s1);
+    
+}
+
+
+digits sum of a given number
+#include<stdio.h>
+#include<stdlib.h>
+int digits_sum(int n1)
+{
+    if(n1>0)
+     return (n1%10 + digits_sum(n1/10));
+     else
+     return 0;
+}
+
+int main()
+{
+    int n1;
+    printf("enter n value :");
+    scanf("%d",&n1);
+    int (*fptr)(int);
+    fptr=digits_sum;
+    int s1=fptr(n1);
+    printf("sum ofgiven num: %d",s1);
+}
+
+factorial
+#include<stdio.h>
+#include<stdlib.h>
+int fact(int n1)
+{
+    if(n1>0)
+     return n1*fact(n1-1);
+     else
+     return 1;
+}
+
+int main()
+{
+    int n1;
+    printf("enter n value :");
+    scanf("%d",&n1);
+    int (*fptr)(int);
+    fptr=fact;
+    printf("fact of given num: %d",fptr(n1));
+}
+
+
+reverse a string
+#include<stdio.h>
+#include<stdlib.h>
+char reverse()
+{
+    char*c=(char *)malloc(sizeof(char));
+    scanf("%c",c);
+    if(*c!='\n')
+    {
+    reverse();
+    printf("%c",*c);
+    }
+}
+
+int main()
+{
+   printf("enter the string:");
+   reverse();
+}
