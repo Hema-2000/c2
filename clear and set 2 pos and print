@@ -1,0 +1,19 @@
+#include<stdio.h>
+#define SIZE 8
+int leading_bit(int a)
+{
+     int p1=1,p2=2;
+    int r1=(a |1<<(p1-1) );
+    int r2=(r1 | 1<<(p2-1));
+ printf("%d",r2); 
+    int r3=(a & (~(1<<(p1-1))));
+    int r4=(a & (~(1<<(p2-1))));
+     printf(" %d",r4); 
+}
+int main()
+{
+    int a=10;
+    int (*fptr)(int);
+    fptr=&leading_bit;
+    fptr(a);
+}
