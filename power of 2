@@ -1,0 +1,16 @@
+#include<stdio.h>
+#define SIZE 8
+int leading_bit(int a)
+{
+    if(a & (a-1)!=0)
+    printf("number is not power of 2");
+    else
+    printf("number is  power of 2");
+}
+int main()
+{
+    int a=1024;
+    int (*fptr)(int);
+    fptr=&leading_bit;
+    fptr(a);
+}
