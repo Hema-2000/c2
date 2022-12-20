@@ -1,0 +1,76 @@
+#include<stdio.h>
+#include<stdlib.h>
+ struct node
+ {
+     int data;
+     struct node *link;
+ };
+ struct node *insert(struct node *head)
+ {
+    struct node *ptr4;
+    ptr4=(struct node *)malloc(sizeof(struct node));
+    ptr4->data=90;
+    ptr4->link=head;
+    head=ptr4;
+   return head;
+ }
+
+= struct node *reverse(struct node *head)
+ {
+     struct node *prevnode,*nextnode,*currentnode;
+     prevnode=0;
+     nextnode=currentnode=head;
+     while(nextnode!=NULL)
+     {
+         nextnode=nextnode->link;
+         currentnode->link=prevnode;
+         prevnode=currentnode;
+         currentnode=nextnode;
+     }
+     head=prevnode;
+     return head;
+ }
+int main()
+{
+    struct node *ptr;
+    struct node *p;
+     struct node *head;
+    ptr=(struct node *)malloc(sizeof(struct node));
+    ptr->data=30;
+    ptr->link=NULL;
+    head=ptr;
+    struct node *ptr1;
+    ptr1=(struct node *)malloc(sizeof(struct node));
+    ptr1->data=20;
+    ptr->link=ptr1;
+    ptr1->link=NULL;
+    struct node *ptr2;
+    ptr2=(struct node *)malloc(sizeof(struct node));
+    ptr2->data=80;
+    ptr2->link=NULL;
+    ptr1->link=ptr2;
+    struct node *ptr3;
+    ptr3=(struct node *)malloc(sizeof(struct node));
+    ptr3->data=5;
+    ptr3->link=NULL;
+    ptr2->link=ptr3;
+   head=insert(head);
+   p=head;
+   while(p!=NULL)
+   {
+       printf("%d ",p->data);
+       
+       p=p->link;
+   }
+   printf("\n");
+    head=reverse(head);
+     p=head;
+
+    
+   while(p!=NULL)
+   {
+       printf("%d ",p->data);
+       p=p->link;
+   }
+    return 0;
+}
