@@ -1,0 +1,17 @@
+#include <stdio.h>
+#define N 32
+int main() {
+    int a=2147483648;
+    int i,msb;
+    for(i=0;i<=N-1;i++)
+    {
+   msb=(1<<i);
+    }
+   int r=msb &a;
+   if(r==0)
+   printf("unset");
+   else
+   printf("set");
+
+    return 0;
+}
