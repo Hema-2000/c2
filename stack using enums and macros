@@ -1,0 +1,84 @@
+#include <stdio.h>
+enum num{ONE,TWO,THREE,FOUR};
+#define N 5
+int stack[N];
+int top=-1;
+void push()
+{
+    int x;
+    printf("enter the data:");
+    scanf("%d",&x);
+    if(top==N-1)
+    printf("stack is overflow");
+    else
+    {
+        top++;
+        stack[top]=x;
+    }
+}
+void pop()
+{
+    int item;
+    if(top==-1)
+    printf("stack is underflow");
+    else
+    {
+        item=stack[top];
+        top--;
+    }
+    printf("the poped numm is %d",stack[top]);
+}
+void peek()
+{
+    if(top==-1)
+    printf("stack is undrflow");
+    else
+    printf("%d",stack[top]);
+}
+void display()
+{
+    int i;
+    for(i=top ;i>=0;i--)
+    {
+        printf("%d ",stack[i]);
+    }
+    
+}
+int main()
+{
+    int choice;
+    do
+    {
+        printf("enter the choice:");
+         scanf("%d",&choice);
+        switch(choice)
+        {
+            case ONE:
+            {
+                push();
+                break;
+            }
+            case TWO:
+            {
+                pop();
+                break;
+            }
+            case THREE:
+            {
+                peek();
+                break;
+            }
+            case FOUR:
+            {
+                display();
+                break;
+            }
+            default:
+             {
+                 printf("enter valid choice");
+             }
+        }
+    }
+    while(choice!=4);
+    return 0;
+}
